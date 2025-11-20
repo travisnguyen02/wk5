@@ -1,0 +1,112 @@
+/* --- Base (Mobile First) --- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery img {
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 90%;  /* flex-basis practice */
+}
+
+/* STUDENT CODE STARTS HERE */
+@media (min-width: 768px) {
+  .grid
+{
+  grid-template-columns: 45% 45%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.gallery img
+{
+  display: flex;
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 30%;
+}
+
+  /* 2-1-2-1 */
+
+  .grid > div:nth-child(3n)
+  {
+    grid-column: 1/-1;
+    width: 50%;
+  }
+
+  .grid > div:nth-child(even) img 
+  {
+    border: none;
+    filter: none;
+  };
+
+  .grid > div:hover{
+    box-shadow: 0 4px 8px;
+    color: black;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  .grid
+  {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .gallery
+  {
+    justify-content: space-between;
+  }
+
+  .gallery img
+  {
+    display: flex;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 200px;
+    gap: 10px
+  }
+
+  .grid > div:hover
+  {
+    box-shadow: 10px;
+  }
+}
+
+
+@media print 
+{
+body 
+{
+  background: white;
+  color: black;
+}
+
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+  .gallery img:hover,
+  .grid > div:hover
+  {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-color-scheme: dark)
+{
+  body
+  {
+    background: #111;
+    color: eee;
+  }
+}

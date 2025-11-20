@@ -1,0 +1,58 @@
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+}
+
+dt, dd {
+  text-align: left;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    gap: 15px;
+    padding: 15px;
+}
+
+.grid > div {
+    border: 3px solid blue;   /* thin blue outline like your screenshot */
+    padding: 10px;            /* space inside the card */
+    box-sizing: border-box;
+}
+
+.grid img,
+.gallery img {
+  display: block;
+  width: 100%;     /* image fits card width instead of hard 400px */
+  height: auto;
+}
+
+
+
+.grid > div:nth-child(even) img {
+    filter: grayscale(100%);
+    border: 25px solid black;
+    box-sizing: border-box;
+}
+
+.gallery
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery img {
+  border: 4px dashed yellow;
+  box-sizing: content-box;
+}
+
+/* every other gallery image */
+.gallery img:nth-child(even) {
+  filter: grayscale(100%);
+  border: 25px solid black;
+}
+
