@@ -21,7 +21,6 @@
   .grid
 {
   grid-template-columns: 45% 45%;
-  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   justify-items: center;
 }
@@ -32,6 +31,12 @@
   flex-shrink: 1;
   flex-grow: 1;
   flex-basis: 30%;
+}
+
+.gallery
+{
+  display: flex;
+  justify-content: space-around;
 }
 
   /* 2-1-2-1 */
@@ -72,13 +77,28 @@
     flex-shrink: 1;
     flex-grow: 1;
     flex-basis: 200px;
-    gap: 10px
+    gap: 20px
   }
+
+  /* removal of the 2-1-2-1 */
 
   .grid > div:hover
   {
-    box-shadow: 10px;
+    box-shadow: 0 4px 8px;
+    color: black;
   }
+
+    .grid > div:nth-child(3n)
+  {
+    grid-column: auto; 
+    width: auto;
+  }
+
+    .grid > div:nth-child(even) img 
+  {
+    border: initial;
+    filter: none;
+  };
 }
 
 
@@ -90,7 +110,23 @@ body
   color: black;
 }
 
+.gallery
+{
+display: none;
 }
+
+.grid {
+  grid-template-columns: 1fr;
+}
+
+.grid > div
+{
+  border: 1px solid #0000;
+  page-break-inside: avoid;
+}
+}
+
+
 
 @media (prefers-reduced-motion: reduce)
 {
@@ -100,6 +136,12 @@ body
     transform: none;
     box-shadow: none;
   }
+
+  .gallery img,
+  .grid > div {
+    transition: none;
+  }
+
 }
 
 @media (prefers-color-scheme: dark)
@@ -107,6 +149,21 @@ body
   body
   {
     background: #111;
-    color: eee;
+    color: #eee;
+  }
+
+  .grid > div
+  {
+    background-color: #111;
+    border: 1px solid #EB5b00;
+  }
+
+  .grid dd {
+    margin: 0;
+    color: #eee;
+  }
+  .grid dt
+  {
+    color: #eee
   }
 }
