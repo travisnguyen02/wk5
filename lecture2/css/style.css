@@ -50,11 +50,6 @@
   .grid
   {
       display: grid;
-      grid-template-columns: 400px;
-      grid-template-columns: 1fr;
-      grid-template-columns: 60% 60%;
-      grid-template-columns: 1fr 1fr;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
       padding: 15px;
@@ -70,6 +65,17 @@
     text-align: left;
   }
 
+  dt, dd {
+  text-align: left;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+}
+
+
   .grid dd
   {
     display: grid;
@@ -82,11 +88,18 @@
   {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
+    padding: 20px;
   }
 
   .gallery:hover
   {
     scale: 101%;
   }
+
+  .grid > div:nth-child(even) img {
+    filter: grayscale(100%);
+    border: 25px solid black;
+    box-sizing: border-box;
+}
