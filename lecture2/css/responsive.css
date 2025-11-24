@@ -53,10 +53,9 @@
     filter: none;
   };
 
-  .grid > div:hover{
-    box-shadow: 0 4px 8px;
-    color: black;
-  }
+  .grid > div:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.4);
+}
 }
 
 @media (min-width: 1200px)
@@ -121,7 +120,7 @@ display: none;
 
 .grid > div
 {
-  border: 1px solid #0000;
+  border: 1px solid #000;
   page-break-inside: avoid;
 }
 }
@@ -158,12 +157,8 @@ display: none;
     border: 1px solid #EB5b00;
   }
 
-  .grid dd {
-    margin: 0;
-    color: #eee;
-  }
-  .grid dt
-  {
-    color: #eee
+    .grid > div:nth-child(even) {
+    background-color: white
   }
 }
+
